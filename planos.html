@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Pop - Planos</title>
+    <link rel="stylesheet" >
+</head> 
+
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #2c2c2c;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #000;
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    header nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+    
+    h1 {
+        margin: 0;
+        padding: 10px 0;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .plano {
+        background-color: #444;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .plano:hover {
+        transform: scale(1.05);
+    }
+    
+    .plano h2 {
+        margin-top: 0;
+    }
+    
+    .plano ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .plano ul li {
+        margin: 10px 0;
+    }
+    
+    .plano button {
+        background-color: #f04e23;
+        border: none;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .plano button:hover {
+        background-color: #d9441e;
+    }
+    </style>
+    <header>
+        <nav>
+            <a href="site.html">Página Inicial</a>
+        </nav>
+        <h1>Planos do Studio Pop</h1>
+    </header>
+    <div class="container">
+        <div class="plano">
+            <h2>Plano Mensal</h2>
+            <ul>
+                <li>Acesso a todas as aulas</li>
+                <li>Suporte com professores</li>
+                <li>Materiais de estudo incluídos</li>
+            </ul>
+            <button onclick="assinar('mensal')">Assinar</button>
+        </div>
+        <div class="plano">
+            <h2>Plano Anual</h2>
+            <ul>
+                <li>Acesso a todas as aulas</li>
+                <li>Suporte com professores</li>
+                <li>Materiais de estudo incluídos</li>
+                <li>Desconto especial</li>
+                <li>Aulas exclusivas</li>
+            </ul>
+            <button onclick="assinar('anual')">Assinar</button>
+        </div>
+    </div>
+    <script>
+    function assinar(plano) {
+        alert('Você escolheu o plano ' + plano + '.');
+    }
+    </script>
+</body>
+</html>

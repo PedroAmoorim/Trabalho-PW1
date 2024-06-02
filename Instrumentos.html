@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Pop - Instrumentos</title>
+    <link rel="stylesheet" href="Instrumentosstyke.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instrumentos que Ensinamos</h1>
+        <div class="balloons">
+            <div class="balloon" data-professor="Professor Caio">Violão</div>
+            <div class="balloon" data-professor="Professor Junior">Piano</div>
+            <div class="balloon" data-professor="Professora Mirela">Bateria</div>
+            <div class="balloon" data-professor="Professor Mateus">Violino</div>
+            <div class="balloon" data-professor="Professor Diego">Guitarra</div>
+        </div>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const balloons = document.querySelectorAll('.balloon');
+        const tooltip = document.getElementById('tooltip');
+    
+        balloons.forEach(balloon => {
+            balloon.addEventListener('mouseover', function() {
+                const professor = this.getAttribute('data-professor');
+                tooltip.textContent = professor;
+                const rect = this.getBoundingClientRect();
+                tooltip.style.display = 'block';
+                tooltip.style.top = `${rect.top - tooltip.offsetHeight}px`;
+                tooltip.style.left = `${rect.left + (rect.width - tooltip.offsetWidth) / 2}px`;
+            });
+    
+            balloon.addEventListener('mouseout', function() {
+                tooltip.style.display = 'none';
+            });
+        });
+    });
+    </script>
+</body>
+</html>

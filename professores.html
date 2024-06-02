@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Pop - Professores</title>
+    <link rel="stylesheet" href="professoresstyles.css">
+</head>
+<body>
+    <header>
+        <h1>Professores do Studio Pop</h1>
+        <nav>
+            <a href="site.html">Página Inicial</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="professor" data-professor="professor1">
+            <img src="imgs/Caio.jpg" alt="Professor A">
+            <p>Professor Caio</p>
+        </div>
+        <div class="professor" data-professor="professor2">
+            <img src="imgs/Junior.jpg" alt="Professor B">
+            <p>Professor Junior</p>
+        </div>
+        <div class="professor" data-professor="professor3">
+            <img src="imgs/Mirela.jpg" alt="Professor C">
+            <p>Professora Milera</p>
+        </div>
+        <div class="professor" data-professor="professor4">
+            <img src="imgs/Mateus.jpeg" alt="Professor D">
+            <p>Professor Mateus</p>
+        </div>
+        <div class="professor" data-professor="professor5">
+            <img src="imgs/Diego.jpeg" alt="Professor E">
+            <p>Professor Diego</p>
+        </div>
+    </div>
+    <div id="professor-info" class="hidden">
+        <h2 id="professor-name"></h2>
+        <p id="professor-bio"></p>
+        <button id="close-btn">Fechar</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const professors = document.querySelectorAll('.professor');
+        const professorInfo = document.getElementById('professor-info');
+        const professorName = document.getElementById('professor-name');
+        const professorBio = document.getElementById('professor-bio');
+        const closeBtn = document.getElementById('close-btn');
+
+        const professorData = {
+            professor1: {
+                name: 'Professor Caio',
+                bio: 'Professor Caio tem uma longa trajetória na música, especializado em violão clássico. Ensina violão há mais de 20 anos.'
+            },
+            professor2: {
+                name: 'Professor Junior',
+                bio: 'Professor Junior é um pianista renomado, com várias apresentações internacionais. Especializado em piano clássico e moderno.'
+            },
+            professor3: {
+                name: 'Professora Milera',
+                bio: 'Professora Milera é conhecida por sua habilidade na bateria. Já tocou em diversas bandas de rock e ensina bateria há 15 anos.'
+            },
+            professor4: {
+                name: 'Professor Mateus',
+                bio: 'Professor Mateus é um violinista talentoso, com um grande conhecimento em teoria musical e técnica de violino. Ensina violino há 10 anos.'
+            },
+            professor5: {
+                name: 'Professor Diego',
+                bio: 'Professor Diego é um mestre da guitarra, com uma carreira de mais de 20 anos tocando em várias bandas e orquestras. Ensina guitarra há 15 anos.'
+            }
+        };
+
+        professors.forEach(professor => {
+            professor.addEventListener('click', function() {
+                const professorId = this.getAttribute('data-professor');
+                const data = professorData[professorId];
+
+                professorName.textContent = data.name;
+                professorBio.textContent = data.bio;
+                professorInfo.classList.remove('hidden');
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            professorInfo.classList.add('hidden');
+        });
+    });
+    </script>
+</body>
+</html>
